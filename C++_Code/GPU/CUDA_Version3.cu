@@ -6,7 +6,7 @@
 
 #define N 2048
 #define blocksize 16
-#define timeNumber 1
+#define timeNumber 10
 
 
 
