@@ -52,8 +52,8 @@ int main() {
     // Initialize matrices
     for (int y = 0; y < N; ++y)
         for (int x = 0; x < N; ++x) {
-            A[y * N + x] = (y + x) * 0.001f;
-            B[y * N + x] = (y - x) * 0.002f;
+            A[y * N + x] = (y + x);
+            B[y * N + x] = (y - x);
         }
 
     // Set device
@@ -120,7 +120,7 @@ int main() {
     const float beta = 0.0f;
 
     cublasSgemm(handle,
-                CUBLAS_OP_T, CUBLAS_OP_T,
+                CUBLAS_OP_N, CUBLAS_OP_N,
                 N, N, N,
                 &alpha,
                 B, N,   // B
