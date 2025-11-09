@@ -127,8 +127,8 @@ int main() {
                 CUBLAS_OP_T, CUBLAS_OP_T,
                 N, N, N,
                 &alpha,
-                B, N,   // B
-                A, N,   // A
+                A, N,   // B
+                B, N,   // A
                 &beta,
                 C_ref, N); // C_ref = A*B
 
