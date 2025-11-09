@@ -120,7 +120,7 @@ int main() {
     const float beta = 0.0f;
 
     cublasSgemm(handle,
-                CUBLAS_OP_N, CUBLAS_OP_N,
+                CUBLAS_OP_T, CUBLAS_OP_T,
                 N, N, N,
                 &alpha,
                 B, N,   // B
