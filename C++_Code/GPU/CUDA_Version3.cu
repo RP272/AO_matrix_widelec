@@ -52,8 +52,10 @@ int main() {
     // Initialize matrices
     for (int y = 0; y < N; ++y)
         for (int x = 0; x < N; ++x) {
-            A[y * N + x] = (y + x) * 0.001f;
-            B[y * N + x] = (y - x) * 0.002f;
+            // A[y * N + x] = (y + x) * 0.001f;
+            A[y * N + x] = 2*(y + x);
+            // B[y * N + x] = (y - x) * 0.002f;
+            B[y * N + x] = 3*(y - x)
         }
 
     // Set device
