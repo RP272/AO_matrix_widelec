@@ -52,8 +52,8 @@ int main() {
     // Initialize matrices
     for (int y = 0; y < N; ++y)
         for (int x = 0; x < N; ++x) {
-            A[y * N + x] = (y + x);
-            B[y * N + x] = (y - x);
+            A[y * N + x] = (y + x) * 0.001f;
+            B[y * N + x] = (y - x) * 0.002f;
         }
 
     // Set device
@@ -119,6 +119,8 @@ int main() {
     const float alpha = 1.0f;
     const float beta = 0.0f;
 
+    // cuBLAS uses column-major order by default
+    // So we compute C_ref = Bᵗ * Aᵗ, which is equivalent to A * B in row-major
     cublasSgemm(handle,
                 CUBLAS_OP_N, CUBLAS_OP_N,
                 N, N, N,
