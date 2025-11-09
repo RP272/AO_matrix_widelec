@@ -124,7 +124,7 @@ int main() {
     // cuBLAS uses column-major order by default
     // So we compute C_ref = Bᵗ * Aᵗ, which is equivalent to A * B in row-major
     cublasSgemm(handle,
-                CUBLAS_OP_N, CUBLAS_OP_N,
+                CUBLAS_OP_T, CUBLAS_OP_T,
                 N, N, N,
                 &alpha,
                 B, N,   // B
